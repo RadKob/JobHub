@@ -7,6 +7,7 @@ namespace JobHub.Models
     {
         [Key]
         [Column(TypeName = "int")]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int user_id { get; set; }
         [Column(TypeName ="varchar(50)")]
         public string name { get; set; }
@@ -25,6 +26,6 @@ namespace JobHub.Models
         [Column(TypeName = "bit")]
         public bool is_del { get; set; }
         [Column(TypeName = "datetime2")]
-        public DateTime deleted_at { get; set; }
+        public DateTime? deleted_at { get; set; }
     }
 }
